@@ -307,6 +307,8 @@
     - Доступен сайт https://hexlet-products-store.vercel.app/
     - DevTools
   test-data: |
+    - OC Microsoft Windows 11 Home 10.0.26100
+    - OC Linux Kernel 6.13.2
     - DevTools -> Ctrl + Shift + M
     - iPhone SE (375px)
     - Samsung Galaxy S8 (414px)
