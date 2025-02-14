@@ -2,8 +2,8 @@
 - summary: |
     Не работает регистрация пользователя на сайте
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home  10.0.26100
+    - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
+    - OC Microsoft Windows 11 Home  10.0.26100
   steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Перейти в форму регистрации пользователя
@@ -13,16 +13,16 @@
     6. Подтвердить пароль пользователя
     7. Нажать кнопку "Зарегистрироваться"
   expected-result: |
-    Пользователь успешно регистрируется на сайте
-    На почту придет письмо с подтверждение о регистрации и link для его подтверждения
+    - Пользователь успешно регистрируется на сайте
+    -  На почту придет письмо с подтверждение о регистрации и link для его подтверждения
   actual-result: |
     Отсутствует форма и функция регистрации пользователя
 ---
 - summary: |
     Не работает вход в личный кабинет зарегистрированного пользователя
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home  10.0.26100
+    - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
+    - OC Microsoft Windows 11 Home  10.0.26100
   steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Перейти в форму входа в личный кабинет пользователя
@@ -37,8 +37,8 @@
 - summary: |
     Скорость загрузки сайта не соответствует заявленным требованиям
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home  10.0.26100
+    - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
+    - OC Microsoft Windows 11 Home  10.0.26100
   steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажимаем кнопку F12 DevTools
@@ -54,8 +54,8 @@
 - summary: |
     Сайт некорректно развёртывается на различный устройствах и мобильных версиях
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home  10.0.26100
+    - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
+    - OC Microsoft Windows 11 Home  10.0.26100
   steps-to-reproduce: |
     1. Зайти на страницу https://hexlet-products-store.vercel.app/
     2. Нажимаем кнопку F12 DevTools
@@ -71,8 +71,8 @@
     - Сайт проходит успешную адаптивность на отсутствие горизонтального скрола
     - Формы, текст, кнопки сайта успешно адаптируются и корректно функционируют
   actual-result: |
-    - Текс списка брэндов не центруется
-    - В списке брэндов есть лищний чекбокс
+    - Текс списка брендов не центруется
+    - В списке брендов есть лищний чекбокс
     - Форма поиска теряет сверху свои границы вводимого поля
     - Чекбокс "В наличии или In Stock" выводит текст раздельно с новой строки
     - Форма цены уплывает и полностью некорректно отображает вводимые поля данных
