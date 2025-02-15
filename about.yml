@@ -1,10 +1,10 @@
-  name: Mikhail Vitoshnev
-  job: QA Engineer
-  level: junior
-  email: mikhailvitoshnev@hotmail.com
-  description: |
-    I'm beginner in Java and QA Engineer
-    I have some background by Technical Support Engineer
+name: Mikhail Vitoshnev
+job: QA Engineer
+level: junior
+email: mikhailvitoshnev@hotmail.com
+description: |
+  I'm beginner in Java and QA Engineer
+  I have some background by Technical Support Engineer
 
   skills:
     - Functional testing
