@@ -1,71 +1,71 @@
-- summary: |
+- summary:
     Проверка успешной регистрации пользователя
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность зарегистрироваться на сайте
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.).
     - Доступен сайт https://hexlet-products-store.vercel.app/
     - Перейти в форму регистрации пользователя
-  test-data: |
+  test-data:
     - Имя: Сергей Сергеев
     - Email: sergeev@hotmail.com
     - Пароль: Sergeev123
-  steps: |
+  steps:
     - Открыть страницу формы регистрации
     - Ввести имя "Сергей Сергеев"
     - Ввести email "sergeev@hotmail.com"
     - Ввести пароль Sergeev123
     - Подтверждаем пароль Sergeev123
     - Нажимаем кнопку "Зарегистрироваться"
-  expected-result: |
+  expected-result:
     - Пользователь успешно зарегестрирован и попадает на главную страницу
     - При повторной регистрации с тем же Email отображается ошибка "Этот Email уже используется"
 
-- summary: |
+- summary:
     Проверка успешного входа зарегистрированного пользователя
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность повторного входа в личный кабинет
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.)
     - Доступен сайт https://hexlet-products-store.vercel.app/
     - Перейти в форму входа в личный кабинет "Войти"
     - Пользователь должен быть зарегистрирован
-  test-data: |
+  test-data:
     - Email: sergeev@hotmail.com
     - Пароль: Sergeev123
   steps:
     - Вводим Email sergeev@hotmail.com
     - Вводим пароль Sergeev123
     - Нажимаем кнопку "Войти"
-  expected-result: |
+  expected-result:
     Пользователь проходит авторизацию и заходит в систему под своим именем
 
-- summary: |
+- summary:
     Проверка быстрой скорости загрузки сайта
-  requirement: |
+  requirement:
     Скорость загрузки должна быть меньше чем 250ms
-  prerequisites: |
+  prerequisites:
     - Проверить скорость загрузки страницы в DevTools
-  test-data: |
+  test-data:
     - URL https://hexlet-products-store.vercel.app/
     - DevTools
-  steps: |
+  steps:
     - Вводим адрес https://hexlet-products-store.vercel.app/
     - Нажимаем кнопку F12 DevTools
     - Проверяем что DevTools открыт на вкладке Network
     - Обновляем страницу (Ctrl + R)
     - Проверяем значения скорости в колонке Time
-  expected-result: |
+  expected-result:
     Страница интернет-магазина должна загрузиться менее чем за 250ms
 
-- summary: |
+- summary:
     Проверка успешной защиты сайта протоколом HTTPS
-  requirement: |
+  requirement:
     Все соединения должны использовать защищённый протокол HTTPS
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.).
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - URL https://
   steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
@@ -75,20 +75,20 @@
     - Ввести в строке мануально http://hexlet-products-store.vercel.app/
     - Нажать Enter
     - Проверить что браузер переводит URL в https://
-  expected-result: |
+  expected-result:
     Продукт защищен протоколом HTTPS
 
-- summary: |
+- summary:
     Проверка успешной защиты от XSS
-  requirement: |
+  requirement:
     Все соединения продукта должны быть защищены от XSS
   prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Поля ввода (поиск, регистрация, отзывы)
     - Формы
-  steps: |
+  steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Открываем любую форму ввода информации: регистрация, вход или поиск
     - Вводим XSS текст <script>alert('XSS');</script>
@@ -101,71 +101,71 @@
   expected-result: |
     Сайт должен быть защищен от XSS
 
-- summary: |
+- summary:
     Проверка успешной защиты от SQL-инъекций
-  requirement: |
+  requirement:
     Все соединения продукта должны быть защищены от SQL-инъекций
   prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Поля ввода
     - Формы
-  steps: |
+  steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Открываем любую форму ввода информации: регистрация, вход или поиск
     - Вводим SQL-запросы ' OR 1=1 - или '; DROP TABLE users; --
     - Нажимаем Enter или Войти
     - Проверяем что-бы сайт оставался стабильным без изменений в работе системы
-  expected-result: |
+  expected-result:
     Сайт должен быть защищен SQL-инъекций
 
-- summary: |
+- summary:
     Проверка успешного поиска товара по ключевому слову
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность искать товары по ключевому слову
   prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Поле "Search" или "Поиск"
-  steps: |
+  steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Кликаем на поле "Search" или "Поиск"
     - Вводим данные искомого нами товара например "cat food"
     - Нажимаем Enter
     - Проверяем что-бы товар соответствовал вводимому значению
-  expected-result: |
+  expected-result:
     Форма ввода должна корректно отрабатывать и выводить искомый товар на экран
 
-- summary: |
+- summary:
     Проверка успешного поиска товара по категории запроса
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность искать товары по категории
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.).
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Поле Category или Категория
-  steps: |
+  steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Кликаем на поле Category или Категория
     - Проверить что выводиться всплывающее окно с категориями: beauty, fragrances, furniture, groceries
     - Выбираем нужную нам категорию, например "beauty" и кликнуть
     - Проверяем что-бы выбранная нами категория соответствовала искомой
-  expected-result: |
+  expected-result:
     Происходит успешный поиск товара по категории
 
-- summary: |
+- summary:
     Проверка успешной фильтрации товаров по цене
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность фильтровать товары
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Поле Цена
-  steps: |
+  steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Находим фильтр "В наличии или In stock"
     - Провереям что чекбокс "В наличии или In stock" активен выбранной справа галочкой
@@ -175,19 +175,19 @@
     - Проверяем что товар соответствуеи искомым данным
     - Выбираем нужную нам категорию кликом
     - Очищаем фильтр и проверяем, что отображаются все товары
-  expected-result: |
+  expected-result:
     Происходит успешный поиск товара по цене
 
-- summary: |
+- summary:
     Проверка успешной фильтрации товаров по производителю
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность фильтровать товары
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Поле списка "Производители"
-  steps: |
+  steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Находим фильтр "В наличии или In stock"
     - Проверяем что чекбокс "В наличии или In stock" активен выбранной справа галочкой
@@ -195,23 +195,23 @@
     - Выбираем Essence и кликаем на чекбокс
     - Проверяем что товар соответствуеи искомым данным производителя
     - Очищаем фильтр и проверяем, что отображаются все товары
-  expected-result: |
+  expected-result:
     Происходит успешный поиск товара по производителю
 
-- summary: |
+- summary:
     Проверка на успешную совместимоть с последними версиями браузеров
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность развертывать продукт на последний версиях браузеров
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
     - DevTools
-  test-data: |
+  test-data:
     - Google Chrome (движок Blink)
     - Mozilla Firefox (движок Gecko)
     - Safari (движок WebKit)
     - Microsoft Edge (движок Blink)
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Проверияем что браузер обновлен до последней версии -> Settings -> About
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
@@ -220,21 +220,21 @@
     - Проверяем что нет горизонтального скролла
     - Проверяем функциональность фильтров, добавления в корзину товара
     - Проверяем корректность оформления заказа
-  expected-result: |
+  expected-result:
     Продукт успешно отображенет развертвование и функциональность на последних версиях браузеров
 
-- summary: |
+- summary:
     Проверка на успешную обработку сайтом большого колличества трафика
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность развертывать продукт на последний версиях браузеров
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
     - DevTools
-  test-data: |
+  test-data:
     - DevTools
     - Lighthouse тестирование Desktop and Mobile
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Нажимаем F12 -> DevTools
     - Вверхней панели инструментов выбираем Lighthouse
@@ -245,20 +245,20 @@
     - Нажимаем еще раз на new report и в радиокнопках кликаем Mobile
     - Проверяем проценты загрузок в отчете всех чекбоксов проверки для мобильной версии
     - Сравнить результаты Desktop vs Mobile
-  expected-result: |
+  expected-result:
     Продукт успешно обрабатывает большок колличество трафика
 
-- summary: |
+- summary:
     Проверка на успешное отображение подробной информации о товаре
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность просматривать товары и просматривать подробную информацию о товаре
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Каталог товаров
     - Детальная информация о товаре
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Заходим на главную страницу
@@ -269,21 +269,21 @@
     - Проверяем, что данные обновились (новое название, изображение, описание)
     - Кликаем Previous
     - Проверяем что когда страница переходит обратно все информация отображается
-  expected-result: |
+  expected-result:
     - Сайт успешно обрабражает побробную информацию о товаре
     - В каталоге корректно отображаются названия, изображения, цены товаров
 
-- summary: |
+- summary:
     Проверка на успешное добавление и просматривание содержимого корзины
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность добавлять товары в корзину и просматривать содержимое корзины
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - Добавление товара в корзину магазина
     - Card (Корзина магазина)
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Вибираем любые три товара и нажимаем Add to card
@@ -294,18 +294,18 @@
     - Проверяем все товары готовые к оплате кнопной Checkout
     - В случае если нужно отчистить корзину полностью, нажимаем Clear card
     - Проверяем что можем вернуться обратно к покупкам кнопкой Continue shopping
-  expected-result: |
+  expected-result:
     Сайт успешно обрабражает функцию добавления товара и просмотра содержимого корзины
 
-- summary: |
+- summary:
     Проверка на успешный доступ к сайту с различных устройств и мобильных версий
-  requirement: |
+  requirement:
     Пользователь должен иметь доступ к сайту с различных устройств
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge и др.)
     - Доступен сайт https://hexlet-products-store.vercel.app/
     - DevTools
-  test-data: |
+  test-data:
     - OC Microsoft Windows 11 Home 10.0.26100
     - OC Linux Kernel 6.13.2
     - DevTools -> Ctrl + Shift + M
@@ -313,7 +313,7 @@
     - Samsung Galaxy S8 (414px)
     - iPad Air (768px)
     - 1366×768 (стандартный ноутбук)
-  steps: |
+  steps:
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Нажимаем F12 -> DevTools
     - Вверху слева кликаем на иконку "Toggle Device Toolbar или Ctrl + Shift + M"
@@ -326,38 +326,38 @@
     - Повторить тест на iPhone SE, Samsung Galaxy S8, iPad Air
     - Повторить на ПК с установкой разрешения 1366×768 и 1920×1080
     - Проверить, что сайт занимает всю ширину экрана, элементы корректно расположены
-  expected-result: |
+  expected-result:
     Сайт успешно отображает доступ с различных устройств
 
-- summary: |
+- summary:
     Проверка на успешную выполнение кнопки Store функции возврата
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность вернуться на главную страницу нажатием кнопки Store
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - функция возврата кнопки Store
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Нажимаем на корзину (Card)
     - Проверяем что находимся в корзине
     - Нажимаем кнопку Store
     - Проверяем что переходим на главную страницу сайта
-  expected-result: |
+  expected-result:
     Кнопка Store успешно выполняет функцию возврата на главную страницу магазина
 
-- summary: |
+- summary:
     Проверка на успешную выполнение переключение языка меню (Русский, Английский)
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность переключения языка меню
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - функция переключения языков меню
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - В шапке сайта справа нажимаем на кнопку Язык (Language)
@@ -365,40 +365,40 @@
     - Проверяем что справа от надписи выбираемого языка отображается флаг страны носителя языка
     - Кликаем на искомый язык
     - Проверяем что функция смены языка работает корректно и язык меню меняется после клика
-  expected-result: |
+  expected-result:
     Кнопка Язык (Language) успешно обрабатывает функцию смены языка меню
 
-- summary: |
+- summary:
     Проверка на успешное подсвечивание кнопок смены страницы, при наведении на нее курсора
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность видеть, что кнопки смены страницы подсвечиваются когда на них наводишь курсор
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - кнопки Previous и Next
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - На главной странице сверху каталога товаров есть две кнопки Previous (Предыдущая) и Next (Следующая)
     - Наводим курсор на эти кнопки
     - Проверяем что при наведении курсора кнопки подсвечиваются (меняют свой оттенок)
     - Проверяем что кнопки корректно работают и переключают страницы
-  expected-result: |
+  expected-result:
     Кнопки Previous и Next успешно подсвечиваются при наведении на них курсором
 
-- summary: |
+- summary:
     Проверка на успешную выполнение переключения функции смены категории товаров
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность смены и выбора категории товаров
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
     - функция смены категории товаров
     - Кнопка Категория
     - Четыре функции категории: beauty, fragrance, furniture, groceries
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Слева вверхнем углу есть кнопка смены категории товаров
@@ -407,20 +407,20 @@
     - Кликаем на каждое из них по очереди
     - Проверяем что искомый товар меняется корректно при смене категории
     - Проверяем что есть возможность убрать категорию фильтрации и продолжить работу без нее
-  expected-result: |
+  expected-result:
     Кнопка Категория успешно фильтрует товар по категориям и корректно выполняет свою функцию
 
-- summary: |
+- summary:
     Проверка на успешную фильтрацию по брендам-производителей товара
-  requirement: |
+  requirement:
     Пользователь должен иметь возможность фильтровать искомые бренды-производители
-  prerequisites: |
+  prerequisites:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Доступен сайт https://hexlet-products-store.vercel.app/
-  test-data: |
+  test-data:
    - работа фунции искомых категорий производителей
    - проверка расположение чекбоксов фильтрации поиска производителей
-  steps: |
+  steps:
     - Открыт браузер (Chrome, Firefox, Edge Safari)
     - Вводим URL сайта https://hexlet-products-store.vercel.app/
     - Справа есть надпись "Производители"
@@ -428,5 +428,5 @@
     - Кликаем на искомые чекбоксы компаний производителей
     - Проверяем что при фильтрации искомых производителей функция работает корректно
     - Проверяем что все чекбоксы не уплывают за границы пикселей, и расположены в ряд
-  expected-result: |
+  expected-result:
     Список фитрации производителей успешно отрабатывает функцию фильтрации
