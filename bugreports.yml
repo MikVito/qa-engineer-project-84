@@ -202,10 +202,6 @@
     Ошибка изображена на скриншоте screenshots/windowCloseBug.png
 
 - summary: |
-    Проверка перехода на страницу оплаты после оформления заказа
-  status: fail
-
-- summary: |
     Не происходит переход на страницу оплаты после нажатия "Checkout"
   environment: |
     Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
