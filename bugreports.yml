@@ -142,6 +142,22 @@
     Ошибка изображена на скриншоте screenshots/categoryBug.png
 
 - summary: |
+    Область клика на карточку товара превышает ее границы
+  environment: |
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
+    OC Microsoft Windows 11 Home 10.0.26100
+  steps-to-reproduce: |
+    1. Открыть страницу https://hexlet-products-store.vercel.app/
+    2. Навести курсор на карточку товара
+    3. Нажать правой кнопкой мыши на область "за границей карточки" и выбрать "Inspect"
+    4. В DevTools видно, что область нажатия выходит за границы карточки товара
+  expected-result: |
+    Область клика соответствует границам карточки товара
+  actual-result: |
+    Область клика выходит за границы карточки товара
+    Ошибка изображена на скриншоте screenshots/productCardBud.png
+
+- summary: |
     Хэштег категории на странице товара не работает (не происходит перехода)
   environment: |
     Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
@@ -220,7 +236,7 @@
     Ошибка изображена на скриншоте screenshots/payFormBug.png
 
 - summary: |
-    Не отображается рейтинг в форме с подробной информацией товара
+    Не отображается рейтинг в карточке с подробной информацией товара
   environment: |
     Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
     OC Microsoft Windows 11 Home 10.0.26100
