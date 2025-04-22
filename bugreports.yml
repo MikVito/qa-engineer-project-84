@@ -1,266 +1,257 @@
 - summary: |
-    Поле фильтрации цены позволяет ввести отрицательне значения
+    Price filter allows entering negative values
   environment: |
     Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Linux Kernel 6.13.2
+    OS Linux Kernel 6.13.2
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Найти поля ввода фильтрации по цене
-    3. В поле "От" ввести -1, в поле "До" ввести -10.
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Locate the price filter input fields
+    3. Enter -1 in the "From" field and -10 in the "To" field
   expected-result: |
-    Поля "От" и "До" должны не позволять вводить отрицательные значения или выдавать ошибку валидации
+    "From" and "To" fields should not allow negative values or should trigger a validation error
   actual-result: |
-    Фильтр принимает отрицательные значения
-    Фильтр "До" позволяет вводить отрицательные значения с помощью кнопок спиннеров
-    Ошибка изображена на скриншоте screenshots/inputPriceBug.png
+    The filter accepts negative values
+    The "To" filter allows negative values via spinner buttons
+    Bug is shown in the screenshot: screenshots/inputPriceBug.png
 
 - summary: |
-    Список фильтров (производители, категории) изменяется при переключении страниц каталога
+    Filter list (manufacturers, categories) changes when navigating between catalog pages
   environment: |
     Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Linux Kernel 6.13.2
+    OS Linux Kernel 6.13.2
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Проверяем что на странице есть фильтры: по цене, по производителю, по категории
-    3. Нажимаем кнопку "Next" для перехода на следующую страницу каталога
-    4. Проверяем, что названия и порядок списока фильтров остается неизменным
-    5. Нажимаем кнопку "Next" еще раз для перехода на следующую страницу каталога
-    6. Проверяем, что названия и порядок списока фильтров остается неизменным
-    7. Нажимаем кнопку "Previous" для возврата на предыдущую страницу
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Verify that filters for price, manufacturer, and category are present
+    3. Click the "Next" button to go to the next catalog page
+    4. Check that the filter names and order remain the same
+    5. Click "Next" again and verify the same
+    6. Click "Previous" to return
   expected-result: |
-    Фильтры должны оставаться неизменными при переходе между страницами каталога
+    Filters should remain unchanged when navigating between catalog pages
   actual-result: |
-    При переходе между страницами список фильтров производителей полностью меняет список и их название
-    При переходе между страницами список категорий полностью меняет свои названия
-    Ошибка изображена на скриншоте screenshots/expectedFilters.png
-    Ошибка изображена на скриншоте screenshots/actualFiltersBug.png
+    Manufacturer filter list completely changes with different names on each page
+    Category list also changes on each navigation
+    Bug is shown in screenshots: screenshots/expectedFilters.png and screenshots/actualFiltersBug.png
 
 - summary: |
-    Скорость загрузки сайта превышает допустимое значение (250ms)
+    Site loading speed exceeds allowed threshold (250ms)
   environment: |
     Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Linux Kernel 6.13.2
+    OS Linux Kernel 6.13.2
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Нажимаем кнопку F12 DevTools
-    3. Проверяем, что DevTools открыт на вкладке Network
-    4. Обновляем страницу (Ctrl + R)
-    5. Проверяем, значения скорости в колонке Time
-    6. Скорость загрузки по требованиям должна быть не больше чем 250ms (2.5s)
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Press F12 to open DevTools
+    3. Ensure the Network tab is selected
+    4. Refresh the page (Ctrl + R)
+    5. Check the Time column for loading speed
   expected-result: |
-    Страница сайта загрузается по заявленным требованиям менее 250ms
+    The site should load in under 250ms
   actual-result: |
-    Скорость загрузки 547ms (5.47s)
-    Ошибка изображена на скриншоте screenshots/speedLoad.png
+    Loading speed is 547ms
+    Bug is shown in the screenshot: screenshots/speedLoad.png
 
 - summary: |
-    Сайт теряет адаптивность на мобильных устройствах (смещение элементов)
+    Site loses mobile responsiveness (layout shifts on devices)
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
-    OC Linux Kernel 6.13.2
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100, Linux Kernel 6.13.2
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Нажимаем кнопку F12 DevTools
-    3. Вверху слева кликаем на иконку "Toggle Device Toolbar или Ctrl + Shift + M"
-    4. Выбираем Dimension и кликаем на него
-    5. Открывается выплывающее окно со списком различных устройств
-    6. Выбираем iPhone SE и кликаем на него
-    7. Проверяем, что нет горизонтального скролла
-    8. Проверяем, что формы, текст, кнопки сайта никуда не уплывают и корректно функционируют
-    9. Повторяем, на iPhone SE, Samsung Galaxy S8, iPad Air
-    10. Повторяем, на Ноутбуке (1366×768) и полноценном Десктоп (1920×1080)
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Press F12 to open DevTools
+    3. Click "Toggle Device Toolbar" or press Ctrl + Shift + M
+    4. Click "Dimensions" and select a device from the popup list
+    5. Choose iPhone SE
+    6. Check for horizontal scrolling
+    7. Verify layout of forms, texts, and buttons
+    8. Repeat on Samsung Galaxy S8, iPad Air, laptop (1366×768), and desktop (1920×1080)
   expected-result: |
-    Сайт проходит успешную адаптивность на отсутствие горизонтального скрола
-    Формы, текст, кнопки сайта успешно адаптируются и корректно функционируют
+    No horizontal scroll, and all elements should adapt properly across all devices
   actual-result: |
-    Текст списка брендов не центруется
-    В списке брендов есть лишний чекбокс
-    Форма поиска теряет сверху свои границы вводимого поля
-    Чекбокс "В наличии или In Stock" выводит текст раздельно с новой строки
-    Форма цены уплывает и полностью некорректно отображает вводимые поля данных
-    При открытии корзины форма Checkout на половину уплывает за пиксели
-    При открытии корзины в форме последнего товара цена и кнопка "Delete" смещаются сильно влево
-    При нажатии на кнопку Next и переключении на следующую страницу, все формы товаров уплывают вправо
-    Так же кнопка "Добавить в корзину" уходит за границу формы вниз
-    Ошибка изображена на скриншоте screenshots/mobileDevBug1.png
-    Ошибка изображена на скриншоте screenshots/mobileDevBug2.png
-    Ошибка изображена на скриншоте screenshots/mobileDevBug3.png
+    Brand list text is not centered
+    Extra checkbox appears in brand list
+    Search input loses top border
+    "In stock" checkbox label breaks to new line
+    Price filter fields overflow their container
+    Checkout form overflows on cart page
+    Product price and "Delete" button are misaligned in cart
+    Product cards shift right when clicking "Next"
+    "Add to cart" button overflows below card
+    Screenshots: mobileDevBug1.png, mobileDevBug2.png, mobileDevBug3.png
+    Screenshot: screenshots/mobileDevBug1.png
+    Screenshot: screenshots/mobileDevBug2.png
+    Screenshot: screenshots/mobileDevBug3.png
 
 - summary: |
-    Описание и категории товаров не переводятся при смене языка
+    Product descriptions and categories are not translated when switching language
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home  10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Справа сверху нажимаем на меню Язык
-    3. Проверяем, что при нажатии на русский, меню меняется на русский язык
-    4. Проверяем, что меню, все категории и описание товаров переведены
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Click the language menu in the top right
+    3. Switch to Russian
+    4. Verify that menus, categories, and product descriptions are translated
   expected-result: |
-    После смены языка на русский все элементы интерфейса должны быть переведены, включая описание товаров и категории
+    All interface elements, including descriptions and categories, should be fully translated to Russian
   actual-result: |
-    Описание товаров остается на английском
-    Категории товаров остаются на английском
-    Ошибка изображена на скриншоте screenshots/languageBugs.png
+    Product descriptions remain in English
+    Product categories remain in English
+    Screenshot: screenshots/languageBugs.png
 
 - summary: |
-    В меню смены языка не отображается флаг английского языка
+    English language flag is not displayed in language menu
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home  10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Справа сверху нажимаем на меню Язык
-    3. Проверяем, что открывается выплывающее меню с русским и английским языком
-    4. Проверяем, что слева отобрабражается флаг страны носителя языка
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Click the language menu in the top right corner
+    3. Confirm that flags are displayed next to each language
   expected-result: |
-    Напротив каждого языка корректно отображается флаг страны носителя
+    A proper flag should be shown next to each language
   actual-result: |
-    При нажатии на меню, флаг ангийского языка не отображается
-    Ошибка изображена на скриншоте screenshots/languageFlagBug.png
+    The English language flag is missing
+    Screenshot: screenshots/languageFlagBug.png
 
 - summary: |
-    Фильтр категории товаров не сбрасывается без перезагрузки страницы
+    Product category filter cannot be reset without page reload
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home  10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Зайти на страницу https://hexlet-products-store.vercel.app/
-    2. Слева под формой "Поиск" нажимаем на кнопку "Категория"
-    3. Проверяем, что при нажатии появляется выплываеющее меню с категориями
-    4. Проверяем, что в окне меню есть четыре категории: beauty, fragrance, furniture, groceries 
-    5. Выбрать одну из категорий и убедиться, что список товаров обновляется корректно
-    6. Проверяем, что текст и форма меню корректно отображаются, текст не выходит за границы
-    7. Проверяем, что есть возможность убрать категорию фильтрации и продолжить работу без нее
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Click the "Category" button below the "Search" form
+    3. Confirm a dropdown menu with categories appears
+    4. Ensure it includes: beauty, fragrance, furniture, groceries
+    5. Select any category and verify product list updates correctly
+    6. Check that the menu text and layout are visually correct
+    7. Try to clear the selected category filter without reloading the page
   expected-result: |
-    Кнопка "Категория" корректно фильтрует товары по выбранным категориям
-    Пользователь может снять выбранную категорию и продолжить работу без фильтрации
+    The "Category" button correctly filters products, and the filter can be removed without page reload
   actual-result: |
-    Отсутствует возможность снять выбранную категорию фильтрации
-    Фильтр категории сбрасывается только после полной перезагрузки страницы
-    Ошибка изображена на скриншоте screenshots/categoryBug.png
+    It is not possible to remove the selected category without reloading the page
+    Screenshot: screenshots/categoryBug.png
 
 - summary: |
-    Область клика на карточку товара превышает ее границы
+    Clickable area on product card exceeds its visual boundaries
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Открыть страницу https://hexlet-products-store.vercel.app/
-    2. Навести курсор на карточку товара
-    3. Нажать правой кнопкой мыши на область "за границей карточки" и выбрать "Inspect"
-    4. В DevTools видно, что область нажатия выходит за границы карточки товара
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Hover over a product card
+    3. Right-click outside the visual border of the card and choose "Inspect"
+    4. In DevTools, verify the clickable area goes beyond the visible card border
   expected-result: |
-    Область клика соответствует границам карточки товара
+    The clickable area should match the visible boundaries of the product card
   actual-result: |
-    Область клика выходит за границы карточки товара
-    Ошибка изображена на скриншоте screenshots/productCardBud.png
+    The clickable area extends beyond the card's visual boundaries
+    Screenshot: screenshots/productCardBud.png
 
 - summary: |
-    Хэштег категории на странице товара не работает (не происходит перехода)
+    Product category hashtag on product page does not work
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Открыть страницу https://hexlet-products-store.vercel.app/
-    2. Нажимаем на товар "Essence Mascara Lash Princess"
-    3. Проверить, что находимся на странице товара (есть название, описание, цена)
-    4. Проверить, что над названием товара отображается хэштег категории "#beauty"
-    5. Нажать, на хэштег #beauty
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Click on the product "Essence Mascara Lash Princess"
+    3. Verify you are on the product detail page
+    4. Locate the hashtag category above the product name (e.g., #beauty)
+    5. Click the hashtag
   expected-result: |
-    После нажатия на хэштег, сайт переходит на страницу всех товаров с категорией "#beauty"
+    Clicking the hashtag should navigate to the category page with related products
   actual-result: |
-    После нажатия на хэштег ничего не происходит, переход на страницу категории товаров не осуществляется
-    Ошибка изображена на скриншоте screenshots/hashtagBug.png
+    Clicking the hashtag does nothing — navigation to the category page does not occur
+    Screenshot: screenshots/hashtagBug.png
 
 - summary: |
-    Ошибка 500 при оформлении заказа (Checkout)
+    500 error occurs when placing an order (Checkout)
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Открыть страницу https://hexlet-products-store.vercel.app/
-    2. Открыть DevTools (F12) → вкладка "Network"
-    3. Перейти в каталог товаров
-    4. Открыть страницу товара "Essence Mascara Lash Princess"
-    5. Нажать "Add to Cart", добавить товар в корзину
-    6. Открыть корзину (Cart)
-    7. Нажать кнопку оформить товар (Checkout)
-    8. Проверить статус ответа на запрос оформления заказа
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Open DevTools (F12) → "Network" tab
+    3. Go to the product catalog
+    4. Open the product page for "Essence Mascara Lash Princess"
+    5. Click "Add to Cart"
+    6. Open the cart
+    7. Click the "Checkout" button
+    8. Check the network response status
   expected-result: |
-    Запрос на оформление заказа успешно обрабатывается сервером (200 OK)
+    Checkout request is successfully processed by the server (200 OK)
   actual-result: |
-    Запрос на оформление заказа (Checkout) возвращает ошибку 500 (Internal Server Error)
-    Ошибка изображена на скриншоте screenshots/serverError.png
+    Checkout request returns a 500 Internal Server Error
+    Screenshot: screenshots/serverError.png
 
 - summary: |
-    Не закрывается окно заказа при нажатии на "×"
+    The order window does not close when clicking "×"
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Открыть страницу https://hexlet-products-store.vercel.app/
-    2. Перейти в каталог товаров
-    3. Находим товар "Essence Mascara Lash Princess"
-    4. Нажать "Add to Cart", добавить товар в корзину
-    5. Открыть корзину (Cart)
-    6. Нажать кнопку оформить товар (Checkout)
-    7. В окне оформления товара нажать на кнопку закрыть "×"
-    8. Проверить, что пользователь остается в корзине
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Go to the product catalog
+    3. Find the product "Essence Mascara Lash Princess"
+    4. Click "Add to Cart"
+    5. Open the cart
+    6. Click the "Checkout" button
+    7. Click the "×" button in the checkout modal
+    8. Verify that the user stays on the cart page
   expected-result: |
-    При нажатии на кнопку закрыть "×", окно оформления товара закрывается
+    Clicking the "×" should close the checkout modal
   actual-result: |
-    При нажатии на кнопку закрыть "×", окно оформления товара не закрывается
-    Ошибка изображена на скриншоте screenshots/windowCloseBug.png
+    The checkout window does not close when clicking the "×" button
+    Screenshot: screenshots/windowCloseBug.png
 
 - summary: |
-    Не происходит переход на страницу оплаты после нажатия "Checkout"
+    No redirection to payment page after clicking "Checkout"
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Открыть страницу https://hexlet-products-store.vercel.app/
-    2. Находим товар "Essence Mascara Lash Princess"
-    3. Нажать "Add to Cart", добавить товар в корзину
-    4. Открываем корзину ("Cart")
-    5. Нажимаем кнопку "Checkout" для оформления заказа
-    6. Проверить, что происходит перенаправление на страницу оплаты
-    7. Проверить, что на странице отображается форма ввода платежных данных
-    8. "Проверить, что присутствуют поля: Номер карты, Имя владельца, Дата окончания, CVC-код, Кнопка Оплатить"
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Find the product "Essence Mascara Lash Princess"
+    3. Click "Add to Cart"
+    4. Open the cart
+    5. Click "Checkout"
+    6. Verify that redirection to the payment page occurs
+    7. Check that the payment form is displayed
+    8. Ensure that fields for card number, cardholder name, expiration date, CVC, and "Pay" button are present
   expected-result: |
-    После нажатия кнопки "Checkout", происходит перенаправление на страницу оплаты товара с формой оплаты
+    After clicking "Checkout", the user is redirected to the payment page with the payment form
   actual-result: |
-    После нажатия кнопки "Checkout", не происходит перенаправления на страницу оплаты товара с формой оплаты
-    Отсутствует функция оплаты товара
-    Ошибка изображена на скриншоте screenshots/payFormBug.png
+    No redirection to the payment page occurs
+    Payment form does not appear
+    Screenshot: screenshots/payFormBug.png
 
 - summary: |
-    Не отображается рейтинг в карточке с подробной информацией товара
+    Product rating is not displayed on the product detail page
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Открыть страницу https://hexlet-products-store.vercel.app/
-    2. Выбираем любой товар в каталоге товаров
-    3. Проверяем что существуют формы с подробной информацией о товаре
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Select any product from the catalog
+    3. Check the detailed product information section
   expected-result: |
-    В описании товара отображается: Название товара, описание, рейтинг, цена, количество, кнопка добавления в корзину
+    Product description must include: name, description, rating, price, quantity, and "Add to cart" button
   actual-result: |
-    В описании товара не отображается рейтинг
-    Ошибка изображена на скриншоте screenshots/productInformationBug.png
+    Product rating is not displayed
+    Screenshot: screenshots/productInformationBug.png
 
 - summary: |
-    Количество товаров в корзине визуально смещается (цифры "плывут")
+    Number of items in the cart is visually misaligned
   environment: |
-    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-    OC Microsoft Windows 11 Home 10.0.26100
+    Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)  
+    OS: Microsoft Windows 11 Home 10.0.26100
   steps-to-reproduce: |
-    1. Открыть страницу https://hexlet-products-store.vercel.app/
-    2. Добавить несколько разных товаров в корзину
-    3. Перейти в корзину
+    1. Go to https://hexlet-products-store.vercel.app/
+    2. Add multiple different products to the cart
+    3. Open the cart
   expected-result: |
-    Количество товаров в корзине отображается корректно, не выходит за границы элементов
+    Quantity values in the cart should be correctly aligned and within layout boundaries
   actual-result: |
-    Число товаров визуально смещается, выравнивание элементов нарушено
-    Ошибка изображена на скриншоте screenshots/cartBug.png
+    Quantity numbers are visually misaligned and element alignment is broken
+    Screenshot: screenshots/cartBug.png
