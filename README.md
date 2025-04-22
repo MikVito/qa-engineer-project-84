@@ -2,56 +2,53 @@
 [![Actions Status](https://github.com/MikVito/qa-engineer-project-84/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MikVito/qa-engineer-project-84/actions)
 
 
-# 🛒 Тестирование интернет-магазина
+# 🛒 Online Store Testing
 
-Этот проект посвящен тестированию небольшого интернет-магазина, продающего товары онлайн.
-В процессе тестирования необходимо проверить корректность работы функционала,
-удобство использования (usability), безопасность, адаптивность и кроссбраузерность.
+This project is dedicated to testing a small online store that sells products.
+The testing process includes verifying functional correctness, usability, security,
+responsiveness, and cross-browser compatibility.
 
+Tested application: [Hexlet Products Store](https://hexlet-products-store.vercel.app/)
 
-Тестируемое приложение: [Hexlet Products Store](https://hexlet-products-store.vercel.app/)
+### 🎯 Project Goals
 
-### 🎯 Цели проекта
+ - Get familiar with the application under test and its features
+ - Perform test analysis and create test cases
+ - Prepare bug reports
+ - Execute tests and document the results
+ - Perform regression testing after bug fixes
 
- - Ознакомление с тестируемым приложением и его возможностями
- - Проведение тест-анализа и создание тест-кейсов
- - Подготовка баг-репортов
- - Проведение тестирования и документирование результатов
- - Выполнение регрессионного тестирования после исправления дефектов
+### 🔍 Main Testing Areas
 
-### 🔍 Основные направления тестирования
+**Functional Testing**
+ - Product search and filtering
+ - Adding products to the cart
+ - Placing an order and proceeding to the payment page
+ - Correct display of product information
 
-**Функциональное тестирование**
- - Поиск и фильтрация товаров
- - Добавление товаров в корзину
- - Оформление заказа и переход на страницу оплаты
- - Корректное отображение информации о товарах 
+**Non-Functional Testing**
+ - Responsiveness: proper display on mobile devices, tablets, and PCs
+ - Cross-browser compatibility: testing in different browsers and their versions
+ - Performance: checking load speed
+ - Usability: ease of use of the interface
 
-**Нефункциональное тестирование**
+**Security**
+ - Protection against XSS attacks
+ - Protection against SQL injections
 
- - Адаптивность: корректное отображение на мобильных, планшетах, ПК
- - Кроссбраузерность: тестирование в разных браузерах и их версиях
- - Производительность: проверка скорости загрузки
- - Usability: удобство использования интерфейса
+### 📋 Test Documentation Formats
+Test cases, bug reports, and test reports are written in YAML format
 
-**Безопасность**
+**List of files:**
+ - requirements.yml – functional, non-functional, and implicit requirements
+ - test-cases.yml – list of test cases with execution steps
+ - bugreports.yml – list of discovered bugs
+ - testing-report.yml – report on the status of test case execution
+ - regress-report.yml – regression testing report
 
- - Защита от атак XSS
- - Защита от SQL-инъекций
+### 🛠 Tools
 
-### 📋 Форматы тестовой документации
-Тест-кейсы, баг-репорты и отчеты оформляются в формате YAML
-
-**Список файлов:**
- - requirements.yml – функциональные, нефункциональные и неявные требования
- - test-cases.yml – перечень тест-кейсов с шагами выполнения
- - bugreports.yml – список обнаруженных багов
- - testing-report.yml – отчет о статусе выполнения тест-кейсов
- - regress-report.yml – отчет о регрессионном тестировании
-
-### 🛠 Инструменты
-
- - GitHub – ведение тестовой документации и баг-репортов
- - DevTools – анализ сетевых запросов, производительности и отладка кода
- - YAML Lint – проверка корректности файлов YAML
- - BrowserStack – тестирование кроссбраузерности
+ - GitHub – for managing test documentation and bug reports
+ - DevTools – for analyzing network requests, performance, and debugging
+ - YAML Lint – for validating YAML files
+ - BrowserStack – for cross-browser testing
