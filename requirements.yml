@@ -1,20 +1,19 @@
 functional:
-  - Пользователь должен иметь возможность искать товары по ключевому слову или категории
-  - Пользователь должен иметь возможность фильтровать товары
-  - Пользователь должен иметь возможность просматривать товары и просматривать подробную информацию о товаре
-  - Пользователь должен иметь возможность добавлять товары в корзину и просматривать содержимое корзины
+  - The user should be able to search for products by keyword or category
+  - The user should be able to filter products
+  - The user should be able to browse products and view detailed product information
+  - The user should be able to add products to the cart and view its contents
 non-functional:
-  - Сайт должен быть безопасным и защищать данные пользователя
-  - Сайт нужно разработать с учетом удобства использования и оптимизировать для скорости работы
-  - Сайт должен иметь мобильную версию
-  - Сайт нужно протестировать на совместимость с последними версиями браузеров
-  - Важно, чтобы сайт мог обрабатывать большое количество трафика
-  - Сайт должен быть доступен на различных устройствах
+  - The website must be secure and protect user data
+  - The website should be designed with usability in mind and optimized for performance
+  - The website must support a mobile version
+  - The website must be tested for compatibility with the latest browser versions
+  - The website should be able to handle high traffic volumes
+  - The website must be accessible on various devices
 implicit:
-  - В верхнем правом углу должена быть кнопка Store, которая возвращает на главную страницу сайта
-  - Должна быть возможность переключения языка (Английский и Русский)
-  - При наведении на кнопку переключения между страницами она должна визуально выделяться (например,
-    изменением цвета или появлением тени)
-  - При клике на категорию товаров, список товаров должен корректно отображаться в выпадающем меню
-  - Список всех брендов-производителей должен отображаться в боковой панели при входе в магазин,
-    для удобства навигации
+  - A "Store" button must be available in the top-right corner to return to the homepage
+  - There must be an option to switch languages (English and Russian)
+  - Pagination buttons must highlight on hover (e.g., with color change or shadow)
+  - Clicking a product category must properly display the product list in the dropdown menu
+  - A list of all brand manufacturers should be displayed in the sidebar when entering the store,
+    for easy navigation
