@@ -1,203 +1,196 @@
 test-cases:
   - summary: |
-      Проверка поиска товара по ключевому слову
+      Verify product search by keyword
     status: pass
 
   - summary: |
-      Проверка поиска товара по категории запроса
+      Verify product search by category
     status: pass
 
   - summary: |
-      Проверка фильтрации товаров по производителю
+      Verify product filtering by manufacturer
     status: pass
 
   - summary: |
-      Проверка фильтрации товаров по производителю
+      Verify product filtering by manufacturer
     status: pass
 
   - summary: |
-      Проверка на отображение подробной информации о товаре
+      Verify display of detailed product information
     status: fail
 
   - summary: |
-      Проверка на добавление и просматривание содержимого корзины
+      Verify adding products to the cart and viewing contents
     status: pass
 
   - summary: |
-      Проверка удаления товара из корзины
+      Verify removing a product from the cart
     status: pass
 
   - summary: |
-      Проверка полной очистки корзины
+      Verify clearing the entire cart
     status: pass
 
   - summary: |
-      Проверка выполнение кнопки Store функции возврата на главную страницу
+      Verify "Store" button returns to homepage
     status: pass
 
   - summary: |
-      Проверка выполнение переключение языка (Русский, Английский)
+      Verify language switch functionality (Russian/English)
     status: fail
 
   - summary: |
-      Проверка на выполнение функции переключения смены категории товаров
+      Verify category switch functionality
     status: pass
 
   - summary: |
-      Проверка добавления нескольких одинаковых товаров в корзину
+      Verify adding multiple identical products to the cart
     status: pass
 
   - summary: |
-      Проверка добавления нескольких разных товаров в корзину
+      Verify adding multiple different products to the cart
     status: pass
 
   - summary: |
-      Проверка отображения списка товаров и их параметров в корзине
+      Verify correct display of products and parameters in the cart
     status: pass
 
   - summary: |
-      Проверка отображения страницы товара
+      Verify display of product page
     status: pass
 
   - summary: |
-      Проверка перехода в категорию по хэштегу на странице товара
+      Verify navigation to category via hashtag on product page
     status: pass
 
   - summary: |
-      Проверка отправки и обработки сетевых запросов
+      Verify sending and handling of network requests
     status: fail
 
   - summary: |
-      Проверка закрытия окна заказа после оформления
+      Verify closing order confirmation window
     status: fail
 
   - summary: |
-      Проверка перехода на страницу оплаты после оформления заказа
+      Verify redirection to payment page after checkout
     status: fail
 
   - summary: |
-      Проверка быстрой скорости загрузки сайта
+      Verify fast site loading speed
     status: pass
 
   - summary: |
-      Проверка защиты сайта протоколом HTTPS
+      Verify HTTPS protocol protection
     status: pass
 
   - summary: |
-      Проверка защиты сайта от Cross-site Script (XSS)
+      Verify protection from Cross-site Scripting (XSS)
     status: pass
 
   - summary: |
-      Проверка защиты от SQL-инъекций
+      Verify protection against SQL injection
     status: pass
 
   - summary: |
-      Проверка на совместимость с последними версиями браузеров
+      Verify compatibility with the latest browser versions
     status: pass
 
   - summary: |
-      Проверка обработку сайтом большого колличества трафика
+      Verify handling of high traffic by the website
     status: fail
 
   - summary: |
-      Проверка отображения сайта на мобильных устройствах
+      Verify mobile device responsiveness
     status: fail
 
   - summary: |
-      Проверка на подсвечивание кнопок смены страницы, при наведении на нее курсора
+      Verify highlight effect on pagination buttons on hover
     status: pass
 
 bugreports:
   - summary: |
-      Строка поиска не фильтрует результаты при вводе несуществующего запроса
+      Search bar does not filter results for non-existent query
     environment: |
       - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-      - OC Microsoft Windows 11 Home 10.0.26100
+      - OS Microsoft Windows 11 Home 10.0.26100
     steps-to-reproduce: |
-      - Вводим URL сайта https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      - Вводим в строку поиска "asdfgr33412"
-      - Проверяем, что на странице нет результатов
-      - Проверяем, что отображается сообщение "Ничего не найдено!" или "Nothing found!"
+      - Open https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      - Enter "asdfgr33412" in the search field
+      - Verify that no results are shown
+      - Verify that the message "Nothing found!" is displayed
     expected-result: |
-      - Если введенный текст не соответствует ни одному товару, поиск должен отфильтровать результаты
-      - Если товара нет, должно появляться сообщение "Ничего не найдено!"
+      - When the query does not match any product, the result should be empty
+      - A message like "Nothing found!" should be shown
     actual-result: |
-      При вводе несуществующего запроса список товаров не изменяется
-      Сообщение "Ничего не найдено!" не отображается
+      Product list does not change after entering invalid input
+      "Nothing found!" message is not displayed
 
   - summary: |
-      Фильтрация товаров по цене не функционирует
+      Price filtering does not work
     environment: |
       - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-      - OC Microsoft Windows 11 Home 10.0.26100
+      - OS Microsoft Windows 11 Home 10.0.26100
     steps-to-reproduce: |
-      - Вводим URL сайта https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      - Проверяем что есть поле Цена или Price с формами ввода "От и До"
-      - Проверяем что форма ввода не уплывает и выглядит в своих границах
-      - Вводим данные от 1 до 100
-      - Проверяем, что в списке товаров отображаются только товары с ценой в этом диапазоне
-      - Очищаем фильтр и проверяем, что отображаются все товары
-      - Проверяем, что нельзя ввести отрицательные значения от -1 до -100 в поля фильтрации
+      - Open https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      - Locate the "Price" filter inputs ("From" and "To")
+      - Ensure the layout is stable and visible
+      - Enter values from 1 to 100
+      - Verify only products within this range are displayed
+      - Clear the filter and verify all products reappear
+      - Try entering negative values (-1 to -100)
     expected-result: |
-      - Фильтрация товаров по цене работает корректно
-      - Отображаются только товары, соответствующие введённому диапазону
-      - После очистки фильтра отображаются все товары
+      - Filtering works correctly
+      - Only products in the given price range are shown
+      - After clearing the filter, all products are restored
     actual-result: |
-      В поле фильтрации можно ввести отрицательные числа
+      Negative values can be entered in the price fields
 
   - summary: |
-      Фильтрация товаров при одновременном применении нескольких фильтров не функционирует
+      Combined filtering does not work correctly
     environment: |
       - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-      - OC Microsoft Windows 11 Home 10.0.26100
+      - OS Microsoft Windows 11 Home 10.0.26100
     steps-to-reproduce: |
-      - Вводим URL сайта https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      - Устанавливаем фильтр по цене от 1 до 100
-      - Выбираем и кликаем на чекбокс производителя "Essence"
-      - Выбираем и кликаем на чекбокс "In Stock" (В наличии)
-      - "Проверяем, что отображаются только товары: Есть в наличии, Стоят от 1 до 100, Принадлежат бренду Essence"
-      - Очищаем фильтр и проверяем, что отображаются все товары
+      - Open https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      - Apply price filter: 1 to 100
+      - Select manufacturer "Essence"
+      - Check the "In Stock" checkbox
+      - Verify that only matching products are displayed
+      - Clear filters and verify reset
     expected-result: |
-      - а странице отображаются только товары, соответствующие всем выбранным фильтрам
+      Only products matching all selected filters should be displayed
     actual-result: |
-      Фильтрация по цене не работает, не реагирует на ввод данных
-      После ввода в фильт цены отрицательное число -1, все фильтры перестают работать
+      Price filter does not respond to input
+      Entering a negative number in price breaks all filters
 
   - summary: |
-      Не отображается флаг страны носителя при переключении языка меню (Русский, Английский)
+      Country flag not shown in language switcher
     environment: |
       - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-      - OC Microsoft Windows 11 Home 10.0.26100
+      - OS Microsoft Windows 11 Home 10.0.26100
     steps-to-reproduce: |
-      - Открыт браузер (Chrome, Firefox, Edge Safari)
-      - Вводим URL сайта https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      - В шапке сайта справа нажимаем на кнопку Язык (Language)
-      - При нажатии должно появиться выплывающее меню с Русским и Английским языком
-      - Проверяем что справа от надписи выбираемого языка отображается флаг страны носителя языка
-      - Кликаем на искомый язык
-      - Проверяем что функция смены языка работает корректно и язык меняется после клика
+      - Open https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+      - Click the language switcher in the top-right corner
+      - Ensure flags are displayed next to each language option
+      - Select a language and verify it switches correctly
     expected-result: |
-      - После выбора языка, меню должно корректно переключаться
-      - В выплывающем меню смены языка, слева должен быть флаг страны носителя языка
+      - Flags should be shown next to language names in the dropdown
     actual-result: |
-      В выплывающем окне меню не отображается флаг страны носителя языка
+      Country flags are not displayed in the language dropdown menu
 
   - summary: |
-      Кнопка Previous (Предыдущая) смены страницы исчезает
+      "Previous" button disappears when switching pages
     environment: |
       - Google Chrome Version 133.0.6943.60 (Official Build) (64-bit)
-      - OC Microsoft Windows 11 Home 10.0.26100
+      - OS Microsoft Windows 11 Home 10.0.26100
     steps-to-reproduce: |
-      - Открыт браузер (Chrome, Firefox, Edge Safari)
-      - Вводим URL сайта https://hexlet-products-store.vercel.app/
-      - На главной странице сверху каталога товаров есть две кнопки Previous (Предыдущая) и Next (Следующая)
-      - Наводим курсор на эти кнопки
-      - Нажать "Next" и проверить, корректно ли переключается страница
-      - Проверить, что кнопка "Previous" остаётся доступной после переключения страницы
+      - Open https://hexlet-products-store.vercel.app/
+      - Locate the "Previous" and "Next" buttons above the catalog
+      - Hover over the buttons
+      - Click "Next" and verify page switches correctly
+      - Ensure "Previous" remains visible after page switch
     expected-result: |
-      - Обе кнопки корректно работают и переключают страницы
-      - После переключения страниц обе кнопки остаются доступными
+      Both buttons should work and remain visible after navigation
     actual-result: |
-      Кнопка "Previous" (Предыдущая) отсутствует при первой загрузке страницы
-      После нажатия на "Next" (Следующая) кнопка "Next" исчезает, а вместо неё появляется "Previous"
-      Нет возможности нормально переключать страницы, так как кнопки пропадают
+      "Previous" is missing on first load
+      After clicking "Next", it appears but "Next" disappears
