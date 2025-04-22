@@ -1,127 +1,127 @@
 - summary: |
-    Проверка поиска товара по ключевому слову
+    Verify product search by keyword
   status: pass
 
 - summary: |
-    Проверка поиска товара по категории запроса
+    Verify product search by category
   status: pass
 
 - summary: |
-    Проверка фильтрации товаров по цене
+    Verify product filtering by price
   status: fail
 
 - summary: |
-    Проверка фильтрации товаров по производителю
+    Verify product filtering by manufacturer
   status: pass
 
 - summary: |
-    Проверка применения нескольких фильтров одновременно
+    Verify applying multiple filters simultaneously
   status: pass
 
 - summary: |
-    Проверка неизменяемости всех видов фильтров при переходе между страницами каталога
+    Verify that filters remain unchanged when navigating between catalog pages
   status: fail
 
 - summary: |
-    Проверка работы кнопок навигации в каталоге товаров
+    Verify navigation buttons in product catalog
   status: pass
 
 - summary: |
-    Проверка на отображение подробной информации о товаре
+    Verify display of detailed product information
   status: fail
 
 - summary: |
-    Проверка на добавление и просматривание содержимого корзины
+    Verify adding products to the cart and viewing contents
   status: pass
 
 - summary: |
-    Проверка удаления товара из корзины
+    Verify removing a product from the cart
   status: pass
 
 - summary: |
-    Проверка полной очистки корзины
+    Verify clearing the entire cart
   status: pass
 
 - summary: |
-    Проверка на выполнение кнопки Store функции возврата
+    Verify "Store" button returns to homepage
   status: pass
 
 - summary: |
-    Проверка выполнение переключение языка (Русский, Английский)
+    Verify language switch functionality (Russian/English)
   status: fail
 
 - summary: |
-    Проверка отображения флага при смене языка
+    Verify language flag display
   status: fail
 
 - summary: |
-    Проверка на выполнение функции переключения смены категории товаров
+    Verify category switch functionality
   status: fail
 
 - summary: |
-    Проверка добавления нескольких одинаковых товаров в корзину
+    Verify adding multiple identical products to the cart
   status: pass
 
 - summary: |
-    Проверка добавления нескольких разных товаров в корзину
+    Verify adding multiple different products to the cart
   status: pass
 
 - summary: |
-    Проверка отображения списка товаров и их параметров в корзине
+    Verify correct display of products and parameters in the cart
   status: fail
 
 - summary: |
-    Проверка отображения страницы товара
+    Verify display of product page
   status: fail
 
 - summary: |
-    Проверка перехода в категорию по хэштегу на странице товара
+    Verify navigation to category via hashtag on product page
   status: fail
 
 - summary: |
-    Проверка поиска товара с несуществующим названием
+    Verify search with non-existent product name
   status: pass
 
 - summary: |
-    Проверка отправки и обработки сетевых запросов
+    Verify sending and handling of network requests
   status: fail
 
 - summary: |
-    Проверка закрытия окна заказа после оформления
+    Verify closing order confirmation window
   status: fail
 
 - summary: |
-    Проверка перехода на страницу оплаты после оформления заказа
+    Verify redirection to payment page after checkout
   status: fail
 
 - summary: |
-    Проверка быстрой скорости загрузки сайта
+    Verify fast site loading speed
   status: fail
 
 - summary: |
-    Проверка защиты сайта протоколом HTTPS
+    Verify HTTPS protocol protection
   status: pass
 
 - summary: |
-    Проверка защиты сайта от Cross-site Script (XSS)
+    Verify protection from Cross-site Scripting (XSS)
   status: pass
 
 - summary: |
-    Проверка защиты от SQL-инъекций
+    Verify protection against SQL injection
   status: pass
 
 - summary: |
-    Проверка на совместимоть с последними версиями браузеров
+    Verify compatibility with the latest browser versions
   status: pass
 
 - summary: |
-    Проверка обработку сайтом большого колличества трафика
+    Verify handling of high traffic by the website
   status: fail
 
 - summary: |
-    Проверка отображения сайта на мобильных устройствах
+    Verify mobile device responsiveness
   status: fail
 
 - summary: |
-    Проверка на подсвечивание кнопок смены страницы, при наведении на нее курсора
+    Verify highlight effect on pagination buttons on hover
   status: pass
